@@ -1,4 +1,4 @@
-#!/usr/bin/node
-import play from '../';
+#!/usr/bin/env node
+import play from '..';
 
 play();
