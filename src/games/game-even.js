@@ -9,7 +9,7 @@ const brainEven = () => {
 
   return {
     expectedAnswer: numberIsEven ? 'yes' : 'no',
-    questionString: `Is ${currentNumber} even? `,
+    questionString: `${currentNumber} `,
   };
 };
 
