@@ -32,3 +32,16 @@ export const balance = (num) => {
   return recBalance(digitsArray);
 };
 
+// generates an arithmetic progression in the form of a string
+export const genArithProg = () => {
+  const base = getRandomInt(1, 100);
+  const incr = getRandomInt(1, 10);
+  const length = getRandomInt(5, 10);
+  const iterGen = (str, element, acc) => {
+    if (acc === 0) { return str; }
+    const newStr = `${str}${element}`;
+    const newElement = element + incr;
+    return iterGen(acc === 1 ? newStr : `${newStr} `, newElement, acc - 1);
+  };
+  return iterGen('', base, length);
+};
