@@ -13,7 +13,7 @@ const brainProg = () => {
 
   return {
     expectedAnswer: `${expectedAnswer}`,
-    questionString: `${question}\n`,
+    questionString: `${question} `,
   };
 };
 
