@@ -1,6 +1,8 @@
+// generates a random integer between min and max (inclusive), default: 1 to 50
 export const getRandomInt = (min = 1, max = 50) =>
   Math.floor(Math.random() * (1 + (max - min) + min));
 
+// returns the greatest common divisor of two numbers
 export const gcd = (x, y) => (x ? gcd(y % x, x) : y);
 
 // returns a sorted array of digits from a number
@@ -44,4 +46,19 @@ export const genArithProg = () => {
     return iterGen(acc === 1 ? newStr : `${newStr} `, newElement, acc - 1);
   };
   return iterGen('', base, length);
+};
+
+// checks for prime number
+export const isPrime = (num) => {
+  if (num === 2) { return true; }
+
+  const sqrtNum = Math.sqrt(num);
+  if (num <= 1 || num % 2 === 0) { return false; }
+
+  const iterCheck = (div) => {
+    if (div > sqrtNum) { return true; }
+    if (num % div === 0) { return false; }
+    return iterCheck(div + 2);
+  };
+  return iterCheck(3);
 };
